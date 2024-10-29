@@ -23,6 +23,16 @@ func check_food():
 	else:
 		print("invalid food quantity.") 
 
+func _input(event):
+	if event.is_action_pressed("ui_up"):  
+		food += 1 
+		print("food added, current food count:", food)
+		check_food()
+	elif event.is_action_pressed("ui_down"):
+		food -=1
+		print("food removed, current food count:", food)
+		check_food()
+		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
