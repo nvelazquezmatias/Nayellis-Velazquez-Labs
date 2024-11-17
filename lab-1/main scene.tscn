@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://6guq2orrpia"]
+
+[ext_resource type="Texture2D" uid="uid://bw68h4xyqn4r7" path="res://Smiski.png" id="2_aaq71"]
+[ext_resource type="Texture2D" uid="uid://bw5qvsnwnaviv" path="res://pink-flower-cartoon-png.webp" id="2_fdlrg"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Smiski" type="Sprite2D" parent="."]
+position = Vector2(871, 271)
+scale = Vector2(0.334375, 0.334375)
+texture = ExtResource("2_aaq71")
+
+[node name="pink flower" type="Sprite2D" parent="."]
+position = Vector2(245.175, 184)
+scale = Vector2(0.475, 0.475)
+texture = ExtResource("2_fdlrg")
