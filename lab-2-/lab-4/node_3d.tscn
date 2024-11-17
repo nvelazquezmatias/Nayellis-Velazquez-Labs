@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://ddncd5nh6jp5g"]
+
+[ext_resource type="Script" path="res://character_body_3d.gd" id="1_p1s2d"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0a5jf"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_1glpn"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.563262, 0.826271, 0.00352081, -0.823472, 0.560993, 0.0847431, 0.0680456, -0.0506319, 0.996397, 105.985, 40.0199, -112.724)
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+use_collision = true
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 5.27593, 4.08567, 11.8431)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 4.4995, -3)
+radius = 4.0
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 0.4995, 12)
+size = Vector3(40, 0.001, 39)
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+script = ExtResource("1_p1s2d")
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D"]
+transform = Transform3D(-0.659648, 0, 0.751575, 0, 1, 0, -0.751575, 0, -0.659648, 3.05107, 1.34927, -2.04702)
+fov = 72.2338
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+transform = Transform3D(0.061275, 0, -0.998121, 0, 1, 0, 0.998121, 0, 0.061275, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_0a5jf")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
+transform = Transform3D(0.867592, 0, 0.497277, 0, 1, 0, -0.497277, 0, 0.867592, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_1glpn")
